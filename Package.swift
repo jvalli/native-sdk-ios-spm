@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "OpenTok",
-            targets: ["OpenTok"]),
+            targets: ["OpenTok", "OpenTokDependencies"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -31,6 +31,13 @@ let package = Package(
          */
         .binaryTarget(name: "OpenTok",
                       path: "OpenTok/OpenTok.xcframework"),
+        .target(name: "OpenTokDependencies",
+                path: "Sources",
+                linkerSettings: [
+                    .linkedFramework("Network"),
+                    .linkedFramework("VideoToolbox"),
+                    .linkedLibrary("c++")
+                ]),
         .testTarget(name: "OpenTokTests",
                     dependencies: ["OpenTok"])
     ]

@@ -1,4 +1,5 @@
 import XCTest
+import OpenTok
 
 final class native_sdk_src_spmTests: XCTestCase {
     func testExample() throws {
