@@ -30,7 +30,7 @@ let package = Package(
                       checksum: "21bd6f7bf300b45080a2d0176905430470692778bb6df8309b327d951e5c2bbc"),
          */
         .binaryTarget(name: "OpenTok",
-                      path: "OpenTok.xcframework"),
+                      path: "OpenTok/OpenTok.xcframework"),
         .testTarget(name: "OpenTokTests",
                     dependencies: ["OpenTok"])
     ]
